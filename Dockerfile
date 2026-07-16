@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
     libxcb1 \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt.
+COPY requirements.txt .
 
 RUN pip install --no-cache-dir --upgrade pip
 
@@ -31,3 +31,4 @@ COPY . .
 EXPOSE 10000
 
 CMD ["sh", "-c", "gunicorn --workers 1 --threads 1 --timeout 300 --bind 0.0.0.0:${PORT:-10000} app:app"]
+

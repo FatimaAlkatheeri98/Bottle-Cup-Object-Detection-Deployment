@@ -1,17 +1,13 @@
-import torch
 import os
 import uuid
 from pathlib import Path
 
 import cv2
+import torch
 from flask import Flask, render_template, request, url_for
 from ultralytics import YOLO
 from werkzeug.utils import secure_filename
 
-torch.set_num_threads(1)
-torch.set_num_interop_threads(1)
-
-model = YOLO(str(MODEL_PATH))
 
 BASE_DIR = Path(__file__).resolve().parent
 UPLOAD_FOLDER = BASE_DIR / "static" / "uploads"
@@ -25,6 +21,9 @@ app.config["MAX_CONTENT_LENGTH"] = 10 * 1024 * 1024
 
 UPLOAD_FOLDER.mkdir(parents=True, exist_ok=True)
 RESULT_FOLDER.mkdir(parents=True, exist_ok=True)
+
+torch.set_num_threads(1)
+torch.set_num_interop_threads(1)
 
 model = YOLO(str(MODEL_PATH))
 
@@ -87,15 +86,15 @@ def index():
         file.save(input_path)
 
         with torch.inference_mode():
-    prediction_results = model.predict(
-        source=str(input_path),
-        conf=0.25,
-        imgsz=160,
-        device="cpu",
-        max_det=10,
-        save=False,
-        verbose=False
-    )
+            prediction_results = model.predict(
+                source=str(input_path),
+                conf=0.25,
+                imgsz=160,
+                device="cpu",
+                max_det=10,
+                save=False,
+                verbose=False
+            )
 
         prediction = prediction_results[0]
         annotated_image = prediction.plot()
@@ -145,10 +144,11 @@ def file_too_large(error):
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 7860))
+    port = int(os.environ.get("PORT", 10000))
 
     app.run(
         host="0.0.0.0",
         port=port,
         debug=False
     )
+    

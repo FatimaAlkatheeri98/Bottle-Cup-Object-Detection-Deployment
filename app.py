@@ -1,4 +1,4 @@
-
+import torch
 import os
 import uuid
 from pathlib import Path
@@ -8,6 +8,10 @@ from flask import Flask, render_template, request, url_for
 from ultralytics import YOLO
 from werkzeug.utils import secure_filename
 
+torch.set_num_threads(1)
+torch.set_num_interop_threads(1)
+
+model = YOLO(str(MODEL_PATH))
 
 BASE_DIR = Path(__file__).resolve().parent
 UPLOAD_FOLDER = BASE_DIR / "static" / "uploads"
@@ -82,12 +86,16 @@ def index():
 
         file.save(input_path)
 
-        prediction_results = model.predict(
-            source=str(input_path),
-            conf=0.25,
-            save=False,
-            verbose=False
-        )
+        with torch.inference_mode():
+    prediction_results = model.predict(
+        source=str(input_path),
+        conf=0.25,
+        imgsz=160,
+        device="cpu",
+        max_det=10,
+        save=False,
+        verbose=False
+    )
 
         prediction = prediction_results[0]
         annotated_image = prediction.plot()

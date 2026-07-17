@@ -1,6 +1,6 @@
 # Bottle & Cup Object Detection Deployment
 
-##Project Overview
+## Project Overview
 
 This project deploys a YOLOv8 object detection model that identifies **bottles** and **cups** in uploaded images. The application was developed using **Flask**, containerized with **Docker**, and deployed online using **Render**.
 

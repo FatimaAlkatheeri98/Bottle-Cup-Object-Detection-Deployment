@@ -45,33 +45,6 @@ BottleCupDetector/
 
 ---
 
-## How to Run Locally
-
-1. Clone the repository.
-
-```bash
-git clone https://github.com/FatimaAlkatheeri98/Bottle-Cup-Object-Detection-Deployment/tree/main
-```
-
-2. Install the required packages.
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Start the application.
-
-```bash
-python app.py
-```
-
-4. Open your browser and visit:
-
-```
-http://localhost:10000
-```
-
----
 
 ## Live Deployment
 
@@ -101,7 +74,7 @@ https://bottle-cup-object-detection-deployment.onrender.com
 
 ---
 
-## Author
+## Prepared by
 
 Fatima Alkatheeri
 

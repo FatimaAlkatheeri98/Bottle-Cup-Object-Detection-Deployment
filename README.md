@@ -85,6 +85,8 @@ https://bottle-cup-object-detection-deployment.onrender.com
 
 Upload an image containing a bottle or cup, then click **Detect Objects** to view the prediction and confidence scores.
 
+
+
 ---
 
 ## Dataset

@@ -50,7 +50,7 @@ BottleCupDetector/
 1. Clone the repository.
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/FatimaAlkatheeri98/Bottle-Cup-Object-Detection-Deployment/tree/main
 ```
 
 2. Install the required packages.

@@ -39,10 +39,8 @@ BottleCupDetector/
 ├── Dockerfile
 ├── requirements.txt
 ├── templates/
-│   └── index.html
-└── static/
-    ├── uploads/
-    └── results/
+    └── index.html
+
 ```
 
 ---

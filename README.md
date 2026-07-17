@@ -81,10 +81,10 @@ https://bottle-cup-object-detection-deployment.onrender.com
 
 ---
 
-## Demo
 
-Upload an image containing a bottle or cup, then click **Detect Objects** to view the prediction and confidence scores.
+## Application Demo
 
+![Bottle and Cup Detector Demo](demo.png) 
 
 
 ---

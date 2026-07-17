@@ -85,7 +85,7 @@ https://bottle-cup-object-detection-deployment.onrender.com
 
 ![Bottle and Cup Detector Demo](demo.png) 
 
-
+![Bottle and Cup Detector Demo](demo1.png) 
 ---
 
 ## Dataset

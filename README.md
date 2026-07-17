@@ -83,6 +83,9 @@ https://bottle-cup-object-detection-deployment.onrender.com
 
 ## Application Demo
 
+> Upload a bottle or cup image through the web interface to view the detection results.
+
+
 ![Bottle and Cup Detector Demo](demo.png) 
 
 ![Bottle and Cup Detector Demo](demo1.png) 

@@ -81,7 +81,6 @@ https://bottle-cup-object-detection-deployment.onrender.com
 
 ---
 
-
 ## Application Demo
 
 ![Bottle and Cup Detector Demo](demo.png) 
